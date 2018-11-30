@@ -1,0 +1,12 @@
+<div class="contacts_count">
+    <h2>There are <span class="count_number"><%= @contacts.count %></span> contacts.</h2>
+</div>
+
+<ul>
+    <% @contacts.each do |contact| %>
+        <li class="contact">
+            <a href= "/contacts/<%= contact.id %>"><h2><%=contact.first_name%> <%=contact.last_name%> (<%=contact.email%>)</h2></a>
+            <a href="/contacts/<%= contact.id %>/edit">Edit</a> | <a href="#">Delete</a>
+        </li>
+    <% end %>
+</ul>
